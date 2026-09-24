@@ -110,13 +110,15 @@ body {
 
 .hero-name {
   font-family: "Brush Script MT", "Segoe Script", cursive;
-  font-size: 3rem;
+  font-size: 3.25rem;
+  text-align: center;
   margin: 0 0 0.5rem;
 }
 
 .hero-tagline {
   font-family: "Brush Script MT", "Segoe Script", cursive;
-  font-size: 1.75rem;
+  font-size: 2rem;
+  text-align: center;
   margin: 0 0 1.5rem;
 }
 

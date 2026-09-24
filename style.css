@@ -120,17 +120,6 @@ body {
   margin: 0 0 1.5rem;
 }
 
-/* Texto branco não teria contraste suficiente sobre o azul claro de destaque */
-.cta-button {
-  display: inline-block;
-  padding: 0.75rem 1.5rem;
-  background-color: var(--color-primary);
-  color: #121212;
-  text-decoration: none;
-  border-radius: 0.5rem;
-  font-weight: 600;
-}
-
 /* ===== Seções gerais ===== */
 .section {
   max-width: 48rem;

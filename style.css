@@ -1,0 +1,241 @@
+/* ===== Variáveis de cor (fixas: preto puro) ===== */
+:root {
+  --color-bg: #000000;
+  --color-bg-alt: #1a1a1a;
+  --color-text: #f2f2f2;
+  --color-primary: #60a5fa;
+  --color-border: #333333;
+}
+
+/* ===== Reset simples e base ===== */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth; /* rolagem suave ao clicar em links de âncora */
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* ===== Cabeçalho e barra de navegação ===== */
+.header {
+  position: relative; /* serve de referência para o menu mobile (position: absolute) */
+  padding: 1rem 1.5rem 3rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link {
+  color: var(--color-text);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav-link:hover {
+  color: var(--color-primary);
+}
+
+/* Botão de alternância de tema */
+.theme-toggle {
+  background: none;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  width: 2.25rem;
+  height: 2.25rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  color: var(--color-text);
+}
+
+/* Botão hambúrguer: escondido no desktop, aparece só no mobile (media query abaixo) */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  width: 2.25rem;
+  height: 2.25rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.hamburger-line {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-text);
+}
+
+/* ===== Seção de introdução (hero) ===== */
+.hero {
+  margin: 3rem 0 0;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.hero-photo {
+  width: 45%;
+  aspect-ratio: 1 / 1; /* mantém quadrada mesmo com a largura variando */
+  object-fit: cover;
+  flex-shrink: 0; /* não deixa a foto encolher para dar espaço ao texto */
+}
+
+.hero-text {
+  text-align: left;
+  padding-right: 2rem; /* não deixa o texto colar na borda direita da tela */
+}
+
+.hero-name {
+  font-family: "Brush Script MT", "Segoe Script", cursive;
+  font-size: 3rem;
+  margin: 0 0 0.5rem;
+}
+
+.hero-tagline {
+  font-size: 1.15rem;
+  margin: 0 0 1.5rem;
+}
+
+/* Texto branco não teria contraste suficiente sobre o azul claro de destaque */
+.cta-button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--color-primary);
+  color: #121212;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+}
+
+/* ===== Seções gerais ===== */
+.section {
+  max-width: 48rem;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+
+/* Links de contato: sem esta regra, ficavam com o azul/roxo padrão do
+   navegador, ilegíveis sobre o fundo escuro do tema dark */
+#contato a {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+/* ===== Cartões de "Minha vida" ===== */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background-color: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+}
+
+/* Espaço reservado para quando as fotos de cada categoria estiverem prontas */
+.card-photo-placeholder {
+  aspect-ratio: 4 / 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0.5rem;
+  margin-bottom: 0.75rem;
+  background-color: var(--color-bg);
+  border: 1px dashed var(--color-border);
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+  opacity: 0.6;
+}
+
+/* ===== Seção "Minha história" (estilo capítulo de livro) ===== */
+.section-story {
+  max-width: 40rem; /* coluna mais estreita, como um livro, pra facilitar a leitura */
+}
+
+.story-heading {
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+}
+
+.story-text {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+/* Primeira letra do capítulo em destaque, como em livros impressos */
+.story-text::first-letter {
+  font-family: "Brush Script MT", "Segoe Script", cursive;
+  font-size: 3.5rem;
+  line-height: 1;
+  float: left;
+  padding-right: 0.5rem;
+  color: var(--color-primary);
+}
+
+/* ===== Responsivo: menu vira hambúrguer abaixo de 768px ===== */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; /* escondido até o botão hambúrguer abrir (classe is-open abaixo) */
+    position: absolute;
+    top: 4rem;
+    left: 1rem;
+    right: 1rem;
+    flex-direction: column;
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    gap: 1rem;
+    z-index: 10;
+  }
+
+  .nav-links.is-open {
+    display: flex; /* classe adicionada/removida pelo script.js (Task 3) */
+  }
+
+  .menu-toggle {
+    display: flex; /* só aparece no mobile */
+  }
+
+  .hero {
+    flex-direction: column; /* empilha foto e texto no celular */
+    text-align: center;
+  }
+
+  .hero-photo {
+    width: 100%; /* ocupa a largura toda em vez de metade, já empilhada */
+  }
+
+  .hero-text {
+    text-align: center;
+    padding-right: 0;
+  }
+}

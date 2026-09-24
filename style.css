@@ -120,6 +120,19 @@ body {
   margin: 0 0 1.5rem;
 }
 
+.hero-about-heading {
+  font-family: "Brush Script MT", "Segoe Script", cursive;
+  font-size: 2rem;
+  margin: 0 0 0.75rem;
+}
+
+.hero-about-text {
+  font-family: "Brush Script MT", "Segoe Script", cursive;
+  font-size: 1.25rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
 /* ===== Seções gerais ===== */
 .section {
   max-width: 48rem;

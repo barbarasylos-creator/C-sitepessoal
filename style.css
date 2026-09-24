@@ -179,6 +179,64 @@ body {
   opacity: 0.6;
 }
 
+/* Foto real de um card (quando já não é mais placeholder) */
+.card-photo {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  margin-bottom: 0.75rem;
+  border-radius: 0.5rem;
+}
+
+/* Card que também é um link: remove estilos padrão de link e adiciona
+   destaque sutil ao passar o mouse, pra indicar que é clicável */
+.card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.2s ease;
+}
+
+.card-link:hover {
+  border-color: var(--color-primary);
+}
+
+/* ===== Galeria de fotos (página "Eu mesma!") ===== */
+.gallery-back-link {
+  display: inline-block;
+  color: var(--color-primary);
+  text-decoration: none;
+  margin-bottom: 1.5rem;
+}
+
+.gallery-back-link:hover {
+  text-decoration: underline;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 2rem;
+}
+
+.gallery-item {
+  margin: 0;
+}
+
+.gallery-photo {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 0.75rem;
+  border: 1px solid var(--color-border);
+}
+
+.gallery-caption {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  opacity: 0.85;
+}
+
 /* ===== Seção "Minha história" (estilo capítulo de livro) ===== */
 .section-story {
   max-width: 40rem; /* coluna mais estreita, como um livro, pra facilitar a leitura */
